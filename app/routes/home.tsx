@@ -1,13 +1,13 @@
-import type { Route } from "./+types/home";
-import { Welcome } from "../welcome/welcome";
-
-export function meta({}: Route.MetaArgs) {
-  return [
-    { title: "New React Router App" },
-    { name: "description", content: "Welcome to React Router!" },
-  ];
-}
+import { useTRPC } from '@/utils/trpc/react'
+import { useQuery } from '@tanstack/react-query'
 
 export default function Home() {
-  return <Welcome />;
+  const trpc = useTRPC()
+  const { data: hello } = useQuery(trpc.greeting.hello.queryOptions())
+
+  return (
+    <div className='flex flex-col items-center justify-center min-h-screen min-w-screen'>
+      {hello}
+    </div>
+  )
 }

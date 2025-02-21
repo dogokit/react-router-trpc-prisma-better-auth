@@ -9,23 +9,32 @@
     "typecheck": "react-router typegen && tsc"
   },
   "dependencies": {
-    "@react-router/node": "^7.1.5",
-    "@react-router/serve": "^7.1.5",
-    "isbot": "^5.1.17",
+    "@prisma/client": "6.3.0",
+    "@react-router/node": "^7.2.0",
+    "@react-router/serve": "^7.2.0",
+    "@tanstack/react-query": "^5.66.9",
+    "@trpc/client": "11.0.0-rc.795",
+    "@trpc/react-query": "11.0.0-rc.795",
+    "@trpc/server": "11.0.0-rc.795",
+    "@trpc/tanstack-react-query": "11.0.0-rc.795",
+    "better-auth": "^1.1.19",
+    "isbot": "^5.1.23",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-router": "^7.1.5"
+    "react-router": "^7.2.0",
+    "superjson": "^2.2.2",
+    "zod": "^3.24.2"
   },
   "devDependencies": {
-    "@react-router/dev": "^7.1.5",
-    "@tailwindcss/vite": "^4.0.0",
-    "@types/node": "^20",
-    "@types/react": "^19.0.1",
-    "@types/react-dom": "^19.0.1",
-    "react-router-devtools": "^1.1.0",
-    "tailwindcss": "^4.0.0",
-    "typescript": "^5.7.2",
-    "vite": "^5.4.11",
+    "@react-router/dev": "^7.2.0",
+    "@tailwindcss/vite": "^4.0.8",
+    "@types/node": "^20.17.19",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "prisma": "^6.4.1",
+    "tailwindcss": "^4.0.8",
+    "typescript": "^5.7.3",
+    "vite": "^5.4.14",
     "vite-tsconfig-paths": "^5.1.4"
   }
 }
