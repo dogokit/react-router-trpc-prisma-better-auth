@@ -1,18 +1,20 @@
-import type { TRPCRouterRecord } from '@trpc/server'
+import type { TRPCRouterRecord } from "@trpc/server";
 
-import { protectedProcedure, publicProcedure } from '@/server/trpc'
+import { protectedProcedure, publicProcedure } from "@/server/trpc";
+import { db } from "../db";
 
 export const greetingRouter = {
-  hello: publicProcedure.query(() => {
-    return 'Hello World!'
+  hello: publicProcedure.query(async (ctx) => {
+    return await db.example.findMany();
   }),
+
   user: protectedProcedure.query(async ({ input, ctx }) => {
     const user = await ctx.db.user.findFirst({
       where: {
-        id: ctx.user?.id
-      }
-    })
+        id: ctx.user?.id,
+      },
+    });
 
-    return user
-  })
-} satisfies TRPCRouterRecord
+    return user;
+  }),
+} satisfies TRPCRouterRecord;

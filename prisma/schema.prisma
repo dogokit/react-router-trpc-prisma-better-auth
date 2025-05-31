@@ -77,3 +77,9 @@ model Verification {
 
   @@map("verification")
 }
+
+model Example {
+  id String @id @default(ulid())
+
+  name String
+}
