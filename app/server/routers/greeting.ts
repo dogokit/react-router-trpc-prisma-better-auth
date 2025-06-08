@@ -5,7 +5,9 @@ import { db } from "../db";
 
 export const greetingRouter = {
   hello: publicProcedure.query(async (ctx) => {
-    return await db.example.findMany();
+    return await db.example.findMany({
+      cacheStrategy: { ttl: 60 },
+    });
   }),
 
   user: protectedProcedure.query(async ({ input, ctx }) => {

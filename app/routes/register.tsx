@@ -1,7 +1,7 @@
 import { authClient } from "@/utils/auth/client";
 
-export default function SignIn() {
-  const signIn = async () => {
+export default function RegisterRoute() {
+  const signUp = async () => {
     await authClient.signIn.social({
       provider: "github",
       callbackURL: "/user",
@@ -13,9 +13,9 @@ export default function SignIn() {
       <button
         type="button"
         className="text-white bg-blue-500 hover:bg-[#4285F4]/90  font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center justify-between mr-2 mb-2"
-        onClick={() => signIn()}
+        onClick={() => signUp()}
       >
-        Sign in with GitHub
+        Sign Up with GitHub
       </button>
     </div>
   );
